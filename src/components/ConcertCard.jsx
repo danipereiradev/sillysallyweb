@@ -3,9 +3,13 @@ import './ConcertCard.css'
 export default function ConcertCard({ concert }) {
   const isPast = concert.status === 'Realizada'
   const isUpcoming = concert.status === 'Info próximamente'
-  const isDisabled = concert.url === '#'
+  const isDisabled = isPast || concert.url === '#'
 
-  const buttonLabel = isDisabled ? 'Próximamente' : 'Entradas / Info'
+  const buttonLabel = isPast
+    ? 'Finalizado'
+    : concert.url === '#'
+      ? 'Próximamente'
+      : 'Entradas / Info'
 
   return (
     <article
