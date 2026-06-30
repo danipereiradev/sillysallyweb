@@ -63,7 +63,19 @@
     background-position: center 30%;
   }
 
+  .hero__overlay {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.36) 0%,
+        rgba(0, 0, 0, 0.2) 45%,
+        rgba(0, 0, 0, 0.52) 100%
+      ),
+      radial-gradient(ellipse at center, transparent 20%, rgba(0, 0, 0, 0.44) 100%);
+  }
+
   .hero__tagline {
+    font-size: clamp(3.125rem, 12.5vw, 6.875rem);
     letter-spacing: 0.2em;
   }
 }
