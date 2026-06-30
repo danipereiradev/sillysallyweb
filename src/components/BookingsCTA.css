@@ -1,0 +1,103 @@
+.bookings-cta {
+  position: relative;
+  margin-top: 100px;
+  min-height: clamp(320px, 50vh, 480px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bookings-cta__parallax {
+  position: absolute;
+  inset: 0;
+  background-color: #000000;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transform: scale(1.05);
+}
+
+.bookings-cta__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.55) 50%,
+      rgba(0, 0, 0, 0.78) 100%
+    ),
+    rgba(230, 57, 70, 0.08);
+  pointer-events: none;
+}
+
+.bookings-cta__content {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1.25rem, 4vw, 2rem);
+  text-align: center;
+}
+
+.bookings-cta__title {
+  margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.bookings-cta__title::after {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin: 0.75rem auto 0;
+  background: var(--color-red);
+}
+
+.bookings-cta__text {
+  margin: 0 0 1.75rem;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  line-height: 1.6;
+  color: var(--color-gray-300);
+}
+
+.bookings-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(0.85rem, 2.2vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-white);
+  background: var(--color-red);
+  border: 2px solid var(--color-red);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.bookings-cta__btn:hover {
+  background: transparent;
+  color: var(--color-red);
+}
+
+.bookings-cta__btn:focus-visible {
+  outline: 2px solid var(--color-white);
+  outline-offset: 4px;
+}
+
+@media (max-width: 768px), (prefers-reduced-motion: reduce) {
+  .bookings-cta__parallax {
+    background-attachment: scroll;
+  }
+}

@@ -29,11 +29,6 @@
       rgba(0, 0, 0, 0.65) 100%
     ),
     radial-gradient(ellipse at center, transparent 20%, rgba(0, 0, 0, 0.55) 100%);
-  border-top: 3px solid #e63946;
-  border-bottom: 3px solid #e63946;
-  box-shadow:
-    inset 0 40px 60px rgba(230, 57, 70, 0.1),
-    inset 0 -40px 60px rgba(230, 57, 70, 0.1);
   pointer-events: none;
 }
 
@@ -43,24 +38,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  justify-content: center;
   padding: 2rem 1.5rem;
-}
-
-.hero__logo {
-  width: clamp(330px, 82.5vw, 630px);
-  height: auto;
-  filter: drop-shadow(0 6px 32px rgba(0, 0, 0, 0.85));
+  text-align: center;
 }
 
 .hero__tagline {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(0.75rem, 2vw, 0.95rem);
+  font-size: clamp(0.625rem, 2.5vw, 1.375rem);
   font-weight: 600;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: var(--color-gray-300);
+  color: var(--color-white);
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
 }
 
@@ -71,5 +61,9 @@
 
   .hero__background {
     background-position: center 30%;
+  }
+
+  .hero__tagline {
+    letter-spacing: 0.2em;
   }
 }
