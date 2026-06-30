@@ -75,7 +75,7 @@
   }
 
   .hero__tagline {
-    font-size: clamp(3.125rem, 12.5vw, 6.875rem);
+    font-size: clamp(1.5625rem, 6.25vw, 3.4375rem);
     letter-spacing: 0.2em;
   }
 }
