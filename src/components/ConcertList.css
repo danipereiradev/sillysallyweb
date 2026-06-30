@@ -1,0 +1,38 @@
+.concerts {
+  width: 100%;
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1rem, 4vw, 2rem);
+}
+
+.concerts__inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.concerts__title {
+  margin: 0 0 clamp(1.5rem, 4vw, 2.5rem);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.concerts__title::after {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin: 0.75rem auto 0;
+  background: var(--color-red);
+}
+
+.concerts__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 2vw, 1rem);
+}

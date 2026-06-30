@@ -1,0 +1,23 @@
+.app {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app main {
+  flex: 1;
+}
+
+.footer {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border-top: 1px solid var(--color-gray-800);
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--color-gray-500);
+  text-transform: uppercase;
+}
