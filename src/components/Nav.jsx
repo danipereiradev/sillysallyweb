@@ -17,7 +17,7 @@ const SOCIAL_LINKS = [
   },
   {
     label: 'Instagram',
-    href: 'https://www.instagram.com/sillysallycrew',
+    href: 'https://www.instagram.com/sillysallyband',
     icon: 'instagram',
   },
   {
