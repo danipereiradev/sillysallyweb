@@ -65,8 +65,13 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: clamp(0.5rem, 1.5vw, 0.75rem);
+}
+
+/* Móvil: máximo 2 columnas × 3 filas = 6 fotos */
+.past-concerts__gallery > li:nth-child(n + 7) {
+  display: none;
 }
 
 .gallery-item {
@@ -100,16 +105,14 @@
   transform: scale(1.06);
 }
 
-@media (min-width: 640px) {
-  .past-concerts__gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: clamp(0.5rem, 1vw, 0.65rem);
-  }
-}
-
 @media (min-width: 960px) {
   .past-concerts__gallery {
     grid-template-columns: repeat(3, 1fr);
+    gap: clamp(0.5rem, 1vw, 0.65rem);
+  }
+
+  .past-concerts__gallery > li:nth-child(n + 7) {
+    display: list-item;
   }
 
   .gallery-item {
