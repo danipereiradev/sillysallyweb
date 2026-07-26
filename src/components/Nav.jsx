@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { PLAY_EVENT } from './SpotifySection'
 import './Nav.css'
 
 const LOGO = encodeURI('/Silly Sally Logo solo.png')
@@ -92,13 +91,6 @@ export default function Nav() {
 
   const closeMenu = () => setIsOpen(false)
 
-  const handleNavClick = (href) => {
-    closeMenu()
-    if (href === '#spotify') {
-      window.dispatchEvent(new CustomEvent(PLAY_EVENT))
-    }
-  }
-
   return (
     <nav
       className={`nav${isOpen ? ' nav--open' : ''}`}
@@ -130,11 +122,7 @@ export default function Nav() {
             <ul className="nav__list">
               {LINKS.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="nav__link"
-                    onClick={() => handleNavClick(link.href)}
-                  >
+                  <a href={link.href} className="nav__link" onClick={closeMenu}>
                     {link.label}
                   </a>
                 </li>

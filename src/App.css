@@ -10,11 +10,18 @@
   inset: 0;
   z-index: 0;
   background-color: #000000;
+  pointer-events: none;
+}
+
+.app__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
   background-image: url('/silly-sally-tiger.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  pointer-events: none;
+  opacity: 1;
 }
 
 .app > :not(.app__bg):not(.nav) {
@@ -32,7 +39,7 @@
   flex: 1;
   width: min(1100px, 100%);
   margin: 0 auto;
-  background: rgba(0, 0, 0, 0.92);
+  background: rgba(0, 0, 0, 0.85);
 }
 
 .footer {

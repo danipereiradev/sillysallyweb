@@ -1,10 +1,8 @@
-import { useEffect, useRef } from 'react'
 import './SpotifySection.css'
 
 const SPOTIFY_ARTIST_ID = '3RcUOmzJSWXwc4ahxSbp9G'
 const SPOTIFY_URL = `https://open.spotify.com/artist/${SPOTIFY_ARTIST_ID}`
-const FEATURED_TRACK_URI = 'spotify:track:17BR2DgjTJZKlk7O5ZErA7'
-const PLAY_EVENT = 'play-spotify-featured'
+const SPOTIFY_EMBED = `https://open.spotify.com/embed/artist/${SPOTIFY_ARTIST_ID}?utm_source=generator&theme=0`
 
 function SpotifyLogo() {
   return (
@@ -23,72 +21,6 @@ function SpotifyLogo() {
 }
 
 export default function SpotifySection() {
-  const embedRef = useRef(null)
-  const controllerRef = useRef(null)
-  const pendingPlayRef = useRef(false)
-
-  useEffect(() => {
-    const playFeaturedTrack = () => {
-      const controller = controllerRef.current
-      if (!controller) {
-        pendingPlayRef.current = true
-        return
-      }
-
-      controller.loadUri(FEATURED_TRACK_URI)
-      controller.play()
-    }
-
-    window.addEventListener(PLAY_EVENT, playFeaturedTrack)
-
-    const existing = document.querySelector(
-      'script[src="https://open.spotify.com/embed/iframe-api/v1"]',
-    )
-
-    const initController = (IFrameAPI) => {
-      if (!embedRef.current || controllerRef.current) return
-
-      IFrameAPI.createController(
-        embedRef.current,
-        {
-          uri: `spotify:artist:${SPOTIFY_ARTIST_ID}`,
-          width: '100%',
-          height: 352,
-          theme: '0',
-        },
-        (EmbedController) => {
-          controllerRef.current = EmbedController
-          if (pendingPlayRef.current) {
-            pendingPlayRef.current = false
-            playFeaturedTrack()
-          }
-        },
-      )
-    }
-
-    if (window.SpotifyIframeApi) {
-      initController(window.SpotifyIframeApi)
-    } else {
-      const previousReady = window.onSpotifyIframeApiReady
-      window.onSpotifyIframeApiReady = (IFrameAPI) => {
-        window.SpotifyIframeApi = IFrameAPI
-        previousReady?.(IFrameAPI)
-        initController(IFrameAPI)
-      }
-
-      if (!existing) {
-        const script = document.createElement('script')
-        script.src = 'https://open.spotify.com/embed/iframe-api/v1'
-        script.async = true
-        document.body.appendChild(script)
-      }
-    }
-
-    return () => {
-      window.removeEventListener(PLAY_EVENT, playFeaturedTrack)
-    }
-  }, [])
-
   return (
     <section className="spotify" id="spotify">
       <div className="spotify__inner">
@@ -99,7 +31,14 @@ export default function SpotifySection() {
         </header>
 
         <div className="spotify__widget">
-          <div ref={embedRef} className="spotify__embed" />
+          <iframe
+            title="Silly Sally en Spotify"
+            src={SPOTIFY_EMBED}
+            width="100%"
+            height="352"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          />
         </div>
 
         <a
@@ -114,5 +53,3 @@ export default function SpotifySection() {
     </section>
   )
 }
-
-export { PLAY_EVENT }
