@@ -1,16 +1,44 @@
 .app {
+  position: relative;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
 }
 
-.app main {
+.app__bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-color: #000000;
+  background-image: url('/silly-sally-tiger.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.app > :not(.app__bg):not(.nav) {
+  position: relative;
+  z-index: 1;
+}
+
+.app > .nav {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.app__boxed {
   flex: 1;
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.92);
 }
 
 .footer {
   padding: 2rem 1.5rem;
   text-align: center;
+  background: rgba(0, 0, 0, 0.92);
   border-top: 1px solid var(--color-gray-800);
 }
 
@@ -20,4 +48,10 @@
   letter-spacing: 0.05em;
   color: var(--color-gray-500);
   text-transform: uppercase;
+}
+
+@media (max-width: 1100px) {
+  .app__boxed {
+    width: 100%;
+  }
 }

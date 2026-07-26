@@ -10,9 +10,10 @@ import './App.css'
 function App() {
   return (
     <div className="app">
+      <div className="app__bg" aria-hidden="true" />
       <Nav />
       <Hero />
-      <main>
+      <main className="app__boxed">
         <SpotifySection />
         <BookingsCTA />
         <MerchSection />
