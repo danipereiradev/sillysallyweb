@@ -1,6 +1,7 @@
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import SpotifySection from './components/SpotifySection'
+import BioSection from './components/BioSection'
 import MerchSection from './components/MerchSection'
 import ConcertList from './components/ConcertList'
 import PastConcerts from './components/PastConcerts'
@@ -15,6 +16,7 @@ function App() {
       <Hero />
       <main className="app__boxed">
         <SpotifySection />
+        <BioSection />
         <BookingsCTA />
         <MerchSection />
         <ConcertList />

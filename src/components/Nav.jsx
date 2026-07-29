@@ -5,6 +5,7 @@ const LOGO = encodeURI('/Silly Sally Logo solo.png')
 
 const LINKS = [
   { label: 'Música', href: '#spotify' },
+  { label: 'Bio', href: '#bio' },
   { label: 'Merch', href: '#merch' },
   { label: 'Fechas', href: '#concerts' },
   { label: 'Fotos', href: '#galeria' },
