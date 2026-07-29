@@ -34,7 +34,7 @@ export const concerts = [
     month: 'SEP',
     city: 'LOGROÑO',
     venue: 'Sala Stereo',
-    time: 'Por confirmar',
+    time: '21:30',
     info: 'Con Kontrol Mental',
     url: '#',
     status: 'Info próximamente',
