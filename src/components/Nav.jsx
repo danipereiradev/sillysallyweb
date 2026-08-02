@@ -7,7 +7,7 @@ const LINKS = [
   { label: 'Música', href: '#spotify' },
   { label: 'Bio', href: '#bio' },
   { label: 'Merch', href: '#merch' },
-  { label: 'Fechas', href: '#concerts' },
+  { label: 'Entradas', href: '#concerts' },
   { label: 'Fotos', href: '#galeria' },
 ]
 
