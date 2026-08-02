@@ -36,7 +36,7 @@ export const concerts = [
     venue: 'Sala Stereo',
     time: '21:30',
     info: 'Con Kontrol Mental',
-    url: '#',
+    url: 'https://woutick.com/es/entradas/silly-sally-kontrol-mental-en-el-stereo-de-logrono',
     status: 'Info próximamente',
   },
   {
