@@ -140,11 +140,18 @@
   padding: 0.85rem 0 0.5rem;
 }
 
+.nav__aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0 0.85rem;
+  border-top: 1px solid var(--color-gray-800);
+}
+
 .nav__social {
   justify-content: center;
   gap: 0.85rem;
-  padding: 0.5rem 0 0.85rem;
-  border-top: 1px solid var(--color-gray-800);
 }
 
 .nav__link {
@@ -241,12 +248,18 @@
     padding: 0;
   }
 
-  .nav__social {
+  .nav__aside {
     grid-area: social;
+    flex-direction: row;
     justify-content: flex-end;
     gap: clamp(0.35rem, 2vw, 0.85rem);
     padding: 0;
     border: 0;
+  }
+
+  .nav__social {
+    justify-content: flex-end;
+    gap: clamp(0.35rem, 2vw, 0.85rem);
   }
 
   .nav__link {

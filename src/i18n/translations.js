@@ -1,0 +1,165 @@
+export const DEFAULT_LANG = 'en'
+export const SUPPORTED_LANGS = ['es', 'en']
+
+export const translations = {
+  en: {
+    nav: {
+      ariaLabel: 'Main navigation',
+      home: 'Silly Sally — home',
+      openMenu: 'Open menu',
+      closeMenu: 'Close menu',
+      bio: 'Bio',
+      music: 'Music',
+      tickets: 'Tickets',
+      merch: 'Merch',
+      instagram: 'Instagram',
+      contact: 'Contact',
+      language: 'Language',
+    },
+    hero: {
+      title: 'Punk Rock from Madrid',
+      description:
+        'Listen to our music, check upcoming dates and grab some merch.',
+      nextShow: 'Next show',
+      posterAlt:
+        'Poster Silly Sally + Kontrol Mental — Sala Stereo, Logroño, September 5',
+    },
+    bio: {
+      title: 'Bio',
+      photoAlt: 'Silly Sally in Granada',
+      members: {
+        sam: 'Vocals',
+        jose: 'Guitar and backing vocals',
+        sergio: 'Bass and backing vocals',
+        dani: 'Drums',
+      },
+      p1: 'Silly Sally is a melodic punk-rock band from Madrid formed in March 2011.',
+      p2: 'In 2012 they released their first EP, <em>Cranfield Before Fall</em>, recorded at Estudios Red Led. That same year, <em>Irish Summer Before Fall</em> was chosen as the song for the official video game of the film <em>REC 3 Genesis</em> (Filmax).',
+      p3: 'In 2013 came their first LP, <em>Minor Fights and Major Fears</em>, released by Wild Punk Records, with a tour across Spain and a slot at the Sick of Bean Festival alongside Atlas Losing Grip, Burning Heads and No Children.',
+      p4: 'After lineup changes, in 2015 they released the single <em>Your Innate Ego</em> and in 2016 the EP <em>No Tales to Be Told</em>. In 2018 they put out <em>Just a Call</em> and in 2020 the EP <em>Out of Range</em>, recorded at Anhell Studios and mastered at Ultramarinos (Barcelona).',
+      p5: 'In recent years they have released singles recorded at La Caverna Estudios: <em>Be My Baby</em> (2022), <em>Hay Allergy</em> (2022), <em>Mírate</em> (2024) and <em>Sepsiembre</em> (2025), the last two in Spanish.',
+    },
+    spotify: {
+      title: 'Listen on Spotify',
+      iframeTitle: 'Silly Sally on Spotify',
+      open: 'Open in Spotify',
+    },
+    concerts: {
+      title: 'Upcoming shows',
+      tickets: 'Tickets / Info',
+      comingSoon: 'Coming soon',
+      finished: 'Finished',
+      past: 'Past show',
+      venueTbd: 'Venue TBD',
+      timeTbd: 'TBD',
+      with: 'With',
+      bandTbd: 'band TBD',
+    },
+    merch: {
+      title: 'Buy merch',
+      storeLink: 'See the full store on Bandcamp',
+      types: {
+        Camiseta: 'T-shirt',
+        Sudadera: 'Sweater',
+        CD: 'CD',
+      },
+    },
+    bookings: {
+      title: 'Bookings',
+      text: "Want to bring Silly Sally to your venue or festival? Get in touch and let's talk.",
+      contact: 'Contact for booking',
+      dossier: 'Download dossier',
+    },
+    instagram: {
+      title: 'Instagram',
+      follow: 'Follow',
+      viewPost: 'View on Instagram',
+      empty:
+        'The feed will connect once you set up the Instagram token. In the meantime, follow us on Instagram.',
+      goTo: 'Go to @{username}',
+    },
+    footer: {
+      tagline: 'Punk Rock Madrid',
+    },
+  },
+  es: {
+    nav: {
+      ariaLabel: 'Navegación principal',
+      home: 'Silly Sally — inicio',
+      openMenu: 'Abrir menú',
+      closeMenu: 'Cerrar menú',
+      bio: 'Bio',
+      music: 'Música',
+      tickets: 'Entradas',
+      merch: 'Merch',
+      instagram: 'Instagram',
+      contact: 'Contacto',
+      language: 'Idioma',
+    },
+    hero: {
+      title: 'Punk Rock desde Madrid',
+      description:
+        'Escucha nuestra música, consulta las próximas fechas y cómprate algo de merch.',
+      nextShow: 'Próximo concierto',
+      posterAlt:
+        'Cartel Silly Sally + Kontrol Mental — Sala Stereo, Logroño, 5 de septiembre',
+    },
+    bio: {
+      title: 'Bio',
+      photoAlt: 'Silly Sally en Granada',
+      members: {
+        sam: 'Voz',
+        jose: 'Guitarra y coros',
+        sergio: 'Bajo y coros',
+        dani: 'Batería',
+      },
+      p1: 'Silly Sally es una banda de punk-rock melódico de Madrid formada en marzo de 2011.',
+      p2: 'En 2012 publicaron su primer EP, <em>Cranfield Before Fall</em>, grabado en Estudios Red Led. Ese mismo año, <em>Irish Summer Before Fall</em> fue elegida canción del videojuego oficial de la película <em>REC 3 Génesis</em> (Filmax).',
+      p3: 'En 2013 llegó su primer LP, <em>Minor Fights and Major Fears</em>, editado por Wild Punk Records, con gira por España y actuación en el Festival Sick of Bean junto a Atlas Losing Grip, Burning Heads o No Children.',
+      p4: 'Tras cambios de formación, en 2015 publicaron el single <em>Your Innate Ego</em> y en 2016 el EP <em>No Tales to Be Told</em>. En 2018 sacaron <em>Just a Call</em> y en 2020 el EP <em>Out of Range</em>, grabado en Anhell Studios y masterizado en Ultramarinos (Barcelona).',
+      p5: 'En los últimos años han publicado singles grabados en La Caverna Estudios: <em>Be My Baby</em> (2022), <em>Hay Allergy</em> (2022), <em>Mírate</em> (2024) y <em>Sepsiembre</em> (2025), estos dos últimos en castellano.',
+    },
+    spotify: {
+      title: 'Escúchanos en Spotify',
+      iframeTitle: 'Silly Sally en Spotify',
+      open: 'Abrir en Spotify',
+    },
+    concerts: {
+      title: 'Próximos conciertos',
+      tickets: 'Entradas / Info',
+      comingSoon: 'Próximamente',
+      finished: 'Finalizado',
+      past: 'Realizada',
+      venueTbd: 'Sala por confirmar',
+      timeTbd: 'Por confirmar',
+      with: 'Con',
+      bandTbd: 'banda por confirmar',
+    },
+    merch: {
+      title: 'Comprar merch',
+      storeLink: 'Ver toda la tienda en Bandcamp',
+      types: {
+        Camiseta: 'Camiseta',
+        Sudadera: 'Sudadera',
+        CD: 'CD',
+      },
+    },
+    bookings: {
+      title: 'Contrataciones',
+      text: '¿Quieres traer Silly Sally a tu sala o festival? Escríbenos y hablamos.',
+      contact: 'Contactar para contratar',
+      dossier: 'Descargar dossier',
+    },
+    instagram: {
+      title: 'Instagram',
+      follow: 'Seguir',
+      viewPost: 'Ver en Instagram',
+      empty:
+        'El feed se conectará cuando configures el token de Instagram. Mientras tanto, síguenos en Instagram.',
+      goTo: 'Ir a @{username}',
+    },
+    footer: {
+      tagline: 'Punk Rock Madrid',
+    },
+  },
+}

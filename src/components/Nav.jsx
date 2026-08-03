@@ -1,34 +1,32 @@
 import { useEffect, useState } from 'react'
+import { useLanguage } from '../i18n/LanguageContext'
+import LanguageSwitch from './LanguageSwitch'
 import './Nav.css'
 
 const LOGO = encodeURI('/Silly Sally Logo solo.png')
 
-const LINKS = [
-  { label: 'Música', href: '#spotify' },
-  { label: 'Bio', href: '#bio' },
-  { label: 'Merch', href: '#merch' },
-  { label: 'Entradas', href: '#concerts' },
-  { label: 'Fotos', href: '#galeria' },
-]
-
 const SOCIAL_LINKS = [
   {
+    labelKey: null,
     label: 'Facebook',
     href: 'https://www.facebook.com/sillysallyband',
     icon: 'facebook',
   },
   {
+    labelKey: null,
     label: 'Instagram',
     href: 'https://www.instagram.com/sillysallyband',
     icon: 'instagram',
   },
   {
+    labelKey: null,
     label: 'YouTube',
     href: 'https://www.youtube.com/@sillysallyband7834',
     icon: 'youtube',
   },
   {
-    label: 'Contacto',
+    labelKey: 'nav.contact',
+    label: 'Contact',
     href: 'mailto:sillysallycrew@yahoo.es',
     icon: 'mail',
   },
@@ -79,6 +77,15 @@ function NavIcon({ name }) {
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false)
+  const { t } = useLanguage()
+
+  const links = [
+    { label: t('nav.bio'), href: '#bio' },
+    { label: t('nav.music'), href: '#spotify' },
+    { label: t('nav.tickets'), href: '#concerts' },
+    { label: t('nav.merch'), href: '#merch' },
+    { label: t('nav.instagram'), href: '#instagram' },
+  ]
 
   useEffect(() => {
     const closeOnDesktop = () => {
@@ -96,13 +103,13 @@ export default function Nav() {
   return (
     <nav
       className={`nav${isOpen ? ' nav--open' : ''}`}
-      aria-label="Navegación principal"
+      aria-label={t('nav.ariaLabel')}
     >
       <div className="nav__inner">
         <a
           href="#"
           className="nav__logo-link"
-          aria-label="Silly Sally — inicio"
+          aria-label={t('nav.home')}
           onClick={closeMenu}
         >
           <img src={LOGO} alt="" className="nav__logo" />
@@ -116,13 +123,15 @@ export default function Nav() {
           onClick={() => setIsOpen((open) => !open)}
         >
           <span className="nav__toggle-icon" aria-hidden="true" />
-          <span className="sr-only">{isOpen ? 'Cerrar menú' : 'Abrir menú'}</span>
+          <span className="sr-only">
+            {isOpen ? t('nav.closeMenu') : t('nav.openMenu')}
+          </span>
         </button>
 
         <div className="nav__panel" id="nav-menu">
           <div className="nav__panel-inner">
             <ul className="nav__list">
-              {LINKS.map((link) => (
+              {links.map((link) => (
                 <li key={link.href}>
                   <a href={link.href} className="nav__link" onClick={closeMenu}>
                     {link.label}
@@ -131,28 +140,33 @@ export default function Nav() {
               ))}
             </ul>
 
-            <ul className="nav__social">
-              {SOCIAL_LINKS.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="nav__icon-link"
-                    target={
-                      link.href.startsWith('mailto:') ? undefined : '_blank'
-                    }
-                    rel={
-                      link.href.startsWith('mailto:')
-                        ? undefined
-                        : 'noopener noreferrer'
-                    }
-                    aria-label={link.label}
-                    onClick={closeMenu}
-                  >
-                    <NavIcon name={link.icon} />
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <div className="nav__aside">
+              <ul className="nav__social">
+                {SOCIAL_LINKS.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className="nav__icon-link"
+                      target={
+                        link.href.startsWith('mailto:') ? undefined : '_blank'
+                      }
+                      rel={
+                        link.href.startsWith('mailto:')
+                          ? undefined
+                          : 'noopener noreferrer'
+                      }
+                      aria-label={
+                        link.labelKey ? t(link.labelKey) : link.label
+                      }
+                      onClick={closeMenu}
+                    >
+                      <NavIcon name={link.icon} />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <LanguageSwitch />
+            </div>
           </div>
         </div>
       </div>

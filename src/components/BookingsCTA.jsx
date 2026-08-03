@@ -1,10 +1,13 @@
 import dossier from '../assets/Silly Sally Dossier 2026.pdf'
+import { useLanguage } from '../i18n/LanguageContext'
 import './BookingsCTA.css'
 
 const CTA_BG = '/contrataciones.jpeg'
 const BOOKING_EMAIL = 'sillysallycrew@yahoo.es'
 
 export default function BookingsCTA() {
+  const { t } = useLanguage()
+
   return (
     <section className="bookings-cta" id="contrataciones">
       <div
@@ -14,20 +17,18 @@ export default function BookingsCTA() {
       />
       <div className="bookings-cta__overlay" aria-hidden="true" />
       <div className="bookings-cta__content">
-        <h2 className="bookings-cta__title">Contrataciones</h2>
-        <p className="bookings-cta__text">
-          ¿Quieres traer Silly Sally a tu sala o festival? Escríbenos y hablamos.
-        </p>
+        <h2 className="bookings-cta__title">{t('bookings.title')}</h2>
+        <p className="bookings-cta__text">{t('bookings.text')}</p>
         <div className="bookings-cta__actions">
           <a href={`mailto:${BOOKING_EMAIL}`} className="bookings-cta__btn">
-            Contactar para contratar
+            {t('bookings.contact')}
           </a>
           <a
             href={dossier}
             className="bookings-cta__btn bookings-cta__btn--secondary"
             download="Silly-Sally-Dossier-2026.pdf"
           >
-            Descargar dossier
+            {t('bookings.dossier')}
           </a>
         </div>
       </div>

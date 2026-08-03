@@ -1,11 +1,14 @@
 import { merchItems, MERCH_STORE_URL } from '../data/merch'
+import { useLanguage } from '../i18n/LanguageContext'
 import './MerchSection.css'
 
 export default function MerchSection() {
+  const { t } = useLanguage()
+
   return (
     <section className="merch" id="merch">
       <div className="merch__inner">
-        <h2 className="merch__title">Comprar merch</h2>
+        <h2 className="merch__title">{t('merch.title')}</h2>
 
         <ul className="merch__grid">
           {merchItems.map((item) => (
@@ -26,7 +29,9 @@ export default function MerchSection() {
                 </div>
                 <div className="merch-card__body">
                   <h3 className="merch-card__title">{item.title}</h3>
-                  <p className="merch-card__type">{item.type}</p>
+                  <p className="merch-card__type">
+                    {t(`merch.types.${item.type}`)}
+                  </p>
                   <p className="merch-card__price">€{item.price} EUR</p>
                 </div>
               </a>
@@ -40,7 +45,7 @@ export default function MerchSection() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Ver toda la tienda en Bandcamp
+          {t('merch.storeLink')}
         </a>
       </div>
     </section>

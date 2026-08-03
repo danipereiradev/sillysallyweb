@@ -1,15 +1,33 @@
+import { useLanguage } from '../i18n/LanguageContext'
 import './ConcertCard.css'
 
+function formatSupport(support, t) {
+  if (!support?.length) return ''
+  const names = support.map((item) =>
+    item === 'bandTbd' ? t('concerts.bandTbd') : item,
+  )
+  return `${t('concerts.with')} ${names.join(' + ')}`
+}
+
 export default function ConcertCard({ concert }) {
-  const isPast = concert.status === 'Realizada'
-  const isUpcoming = concert.status === 'Info próximamente'
+  const { t } = useLanguage()
+  const isPast = concert.status === 'past'
+  const isUpcoming = concert.status === 'upcoming'
   const isDisabled = isPast || concert.url === '#'
 
+  const venue = concert.venueKey
+    ? t(`concerts.${concert.venueKey}`)
+    : concert.venue
+  const time = concert.timeKey
+    ? t(`concerts.${concert.timeKey}`)
+    : concert.time
+  const info = formatSupport(concert.support, t)
+
   const buttonLabel = isPast
-    ? 'Finalizado'
+    ? t('concerts.finished')
     : concert.url === '#'
-      ? 'Próximamente'
-      : 'Entradas / Info'
+      ? t('concerts.comingSoon')
+      : t('concerts.tickets')
 
   return (
     <article
@@ -28,17 +46,17 @@ export default function ConcertCard({ concert }) {
 
       <div className="concert-card__body">
         <h3 className="concert-card__city">{concert.city}</h3>
-        <p className="concert-card__venue">{concert.venue}</p>
+        <p className="concert-card__venue">{venue}</p>
         <div className="concert-card__meta">
-          <span className="concert-card__time">{concert.time}</span>
+          <span className="concert-card__time">{time}</span>
           <span className="concert-card__separator" aria-hidden="true">
             ·
           </span>
-          <span className="concert-card__info">{concert.info}</span>
+          <span className="concert-card__info">{info}</span>
         </div>
         {isPast && (
           <span className="concert-card__badge concert-card__badge--past">
-            Realizada
+            {t('concerts.past')}
           </span>
         )}
       </div>

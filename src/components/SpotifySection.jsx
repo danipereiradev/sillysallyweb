@@ -1,3 +1,4 @@
+import { useLanguage } from '../i18n/LanguageContext'
 import './SpotifySection.css'
 
 const SPOTIFY_ARTIST_ID = '3RcUOmzJSWXwc4ahxSbp9G'
@@ -21,18 +22,20 @@ function SpotifyLogo() {
 }
 
 export default function SpotifySection() {
+  const { t } = useLanguage()
+
   return (
     <section className="spotify" id="spotify">
       <div className="spotify__inner">
         <header className="spotify__header">
           <SpotifyLogo />
-          <h2 className="spotify__title">Escúchanos en Spotify</h2>
+          <h2 className="spotify__title">{t('spotify.title')}</h2>
           <p className="spotify__artist">Silly Sally | Madrid Punk Rock</p>
         </header>
 
         <div className="spotify__widget">
           <iframe
-            title="Silly Sally en Spotify"
+            title={t('spotify.iframeTitle')}
             src={SPOTIFY_EMBED}
             width="100%"
             height="352"
@@ -47,7 +50,7 @@ export default function SpotifySection() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Abrir en Spotify
+          {t('spotify.open')}
         </a>
       </div>
     </section>

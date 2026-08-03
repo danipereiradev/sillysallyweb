@@ -1,0 +1,210 @@
+.instagram {
+  width: 100%;
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1rem, 4vw, 2rem);
+}
+
+.instagram__inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.instagram__title {
+  margin: 0 0 clamp(1.5rem, 4vw, 2.5rem);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.instagram__title::after {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin: 0.75rem auto 0;
+  background: var(--color-red);
+}
+
+.instagram__profile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.instagram__identity {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-width: 0;
+}
+
+.instagram__avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-gray-700);
+  flex-shrink: 0;
+  background: var(--color-gray-900);
+}
+
+.instagram__avatar--fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-400);
+}
+
+.instagram__brand-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.instagram__meta {
+  min-width: 0;
+}
+
+.instagram__username {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3.5vw, 1.6rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.instagram__handle {
+  margin: 0.15rem 0 0;
+  font-size: 0.85rem;
+  color: var(--color-gray-400);
+}
+
+.instagram__follow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.4rem;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-white);
+  background: var(--color-red);
+  border: 2px solid var(--color-red);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.instagram__follow:hover {
+  background: transparent;
+  color: var(--color-red);
+}
+
+.instagram__follow--inline {
+  margin-top: 0.5rem;
+}
+
+.instagram__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(0.5rem, 1.5vw, 0.75rem);
+}
+
+.instagram__post {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--color-gray-950);
+  text-decoration: none;
+}
+
+.instagram__post-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.instagram__post:hover .instagram__post-image {
+  transform: scale(1.05);
+}
+
+.instagram__post-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--color-gray-850);
+}
+
+.instagram__post-badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-white);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.instagram__skeleton {
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    var(--color-gray-900) 0%,
+    var(--color-gray-850) 50%,
+    var(--color-gray-900) 100%
+  );
+  background-size: 200% 100%;
+  animation: instagram-shine 1.2s ease-in-out infinite;
+}
+
+.instagram__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem) 1rem;
+  text-align: center;
+  border: 1px solid var(--color-gray-800);
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--color-gray-300);
+}
+
+.instagram__empty .instagram__brand-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  color: var(--color-gray-400);
+}
+
+.instagram__empty p {
+  margin: 0;
+  max-width: 28rem;
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
+@keyframes instagram-shine {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@media (min-width: 720px) {
+  .instagram__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
