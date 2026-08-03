@@ -139,7 +139,8 @@
 
 @media (max-width: 640px) {
   .hero {
-    min-height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
   }
 
   .hero__background {
@@ -157,6 +158,25 @@
       radial-gradient(ellipse at center, transparent 20%, rgba(0, 0, 0, 0.44) 100%);
   }
 
+  .hero__content {
+    width: min(18.5rem, calc(100% - 2.5rem));
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin-inline: auto;
+    padding-inline: 0;
+    align-content: center;
+    justify-items: stretch;
+    gap: 1.5rem;
+  }
+
+  .hero__copy,
+  .hero__next-show,
+  .hero__description,
+  .hero__poster-link {
+    width: 100%;
+    max-width: none;
+  }
+
   .hero__title {
     font-size: clamp(1.75rem, 8vw, 2.5rem);
     letter-spacing: 0.06em;
@@ -164,10 +184,5 @@
 
   .hero__description {
     font-size: clamp(0.95rem, 3.8vw, 1.1rem);
-    margin-inline: auto;
-  }
-
-  .hero__poster-link {
-    max-width: 200px;
   }
 }
