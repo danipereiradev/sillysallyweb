@@ -23,11 +23,7 @@ export const translations = {
     },
     hero: {
       title: 'Punk Rock from Madrid',
-      description:
-        'Listen to our music, check upcoming dates and grab some merch.',
-      nextShow: 'Next show',
-      posterAlt:
-        'Poster Silly Sally + Kontrol Mental — Sala Stereo, Logroño, September 5',
+      description: 'Listen to our music, follow the news and grab some merch.',
     },
     bio: {
       title: 'Bio',
@@ -110,10 +106,7 @@ export const translations = {
     hero: {
       title: 'Punk Rock desde Madrid',
       description:
-        'Escucha nuestra música, consulta las próximas fechas y cómprate algo de merch.',
-      nextShow: 'Próximo concierto',
-      posterAlt:
-        'Cartel Silly Sally + Kontrol Mental — Sala Stereo, Logroño, 5 de septiembre',
+        'Escucha nuestra música, sigue las noticias y cómprate algo de merch.',
     },
     bio: {
       title: 'Bio',

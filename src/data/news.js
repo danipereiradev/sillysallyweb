@@ -21,7 +21,7 @@ export const newsArticles = [
         '19/09 — Madrid, con My Left Foot.',
         '17/10 — Gijón, con Noite Atari.',
         '06/11 — Jerez, con Mexican Sugar Skulls y Liv Wallace.',
-        'Más info y entradas en la sección de conciertos. ¡Nos vemos en la carretera!',
+        '¡Nos vemos en la carretera!',
       ],
       en: [
         'The 15th anniversary tour (2011–2026) is under way. These are the confirmed dates from the poster:',
@@ -32,7 +32,7 @@ export const newsArticles = [
         '19/09 — Madrid, with My Left Foot.',
         '17/10 — Gijón, with Noite Atari.',
         '06/11 — Jerez, with Mexican Sugar Skulls and Liv Wallace.',
-        'More info and tickets in the shows section. See you on the road!',
+        'See you on the road!',
       ],
     },
   },
