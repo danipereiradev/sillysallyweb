@@ -10,12 +10,14 @@
 
 .hero__background {
   position: absolute;
-  inset: 0;
+  inset: -4%;
   background-color: #000000;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  transform: scale(1.02);
+  transform-origin: center center;
+  animation: hero-kenburns 22s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 .hero__overlay {
@@ -77,12 +79,17 @@
 
 @media (max-width: 640px) {
   .hero {
-    min-height: 100vh;
-    min-height: 100dvh;
+    height: calc(100svh - var(--nav-height));
+    height: calc(100dvh - var(--nav-height));
+    min-height: calc(100svh - var(--nav-height));
+    min-height: calc(100dvh - var(--nav-height));
+    display: grid;
+    place-items: center;
   }
 
   .hero__background {
     background-position: center 30%;
+    inset: -6%;
   }
 
   .hero__overlay {
@@ -97,11 +104,11 @@
   }
 
   .hero__content {
-    width: min(18.5rem, calc(100% - 2.5rem));
-    min-height: 100vh;
-    min-height: 100dvh;
-    margin-inline: auto;
-    padding-inline: 0;
+    width: min(22rem, calc(100% - 2.5rem));
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
   }
 
   .hero__copy,
@@ -110,12 +117,34 @@
     max-width: none;
   }
 
+  .hero__copy {
+    gap: 1rem;
+  }
+
   .hero__title {
-    font-size: clamp(1.75rem, 8vw, 2.5rem);
-    letter-spacing: 0.06em;
+    font-size: clamp(2.4rem, 12vw, 3.25rem);
+    letter-spacing: 0.05em;
   }
 
   .hero__description {
-    font-size: clamp(0.95rem, 3.8vw, 1.1rem);
+    font-size: clamp(1.1rem, 4.5vw, 1.3rem);
+  }
+}
+
+@keyframes hero-kenburns {
+  from {
+    transform: scale(1.06) translate3d(1.2%, 0.6%, 0);
+  }
+
+  to {
+    transform: scale(1.2) translate3d(-3.2%, -2%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__background {
+    inset: 0;
+    animation: none;
+    transform: none;
   }
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageContext'
 import LanguageSwitch from './LanguageSwitch'
@@ -78,6 +78,7 @@ function NavIcon({ name }) {
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false)
+  const navRef = useRef(null)
   const { t } = useLanguage()
 
   const links = [
@@ -98,10 +99,30 @@ export default function Nav() {
     return () => window.removeEventListener('resize', closeOnDesktop)
   }, [])
 
+  useEffect(() => {
+    const nav = navRef.current
+    if (!nav) return undefined
+
+    const syncNavHeight = () => {
+      // Ignore expanded mobile menu so hero height stays stable.
+      if (nav.classList.contains('nav--open')) return
+      document.documentElement.style.setProperty(
+        '--nav-height',
+        `${nav.offsetHeight}px`,
+      )
+    }
+
+    syncNavHeight()
+    const observer = new ResizeObserver(syncNavHeight)
+    observer.observe(nav)
+    return () => observer.disconnect()
+  }, [isOpen])
+
   const closeMenu = () => setIsOpen(false)
 
   return (
     <nav
+      ref={navRef}
       className={`nav${isOpen ? ' nav--open' : ''}`}
       aria-label={t('nav.ariaLabel')}
     >

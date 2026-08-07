@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap');
 
 :root {
+  --nav-height: 4.5rem;
   --color-black: #000000;
   --color-white: #ffffff;
   --color-red: #e63946;
