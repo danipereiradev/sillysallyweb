@@ -39,7 +39,7 @@ export const translations = {
       p3: 'In 2013 came their first LP, <em>Minor Fights and Major Fears</em>, released by Wild Punk Records, with a tour across Spain and a slot at the Sick of Bean Festival alongside Atlas Losing Grip, Burning Heads and No Children.',
       p4: 'After lineup changes, in 2015 they released the single <em>Your Innate Ego</em> and in 2016 the EP <em>No Tales to Be Told</em>. In 2018 they put out <em>Just a Call</em> and in 2020 the EP <em>Out of Range</em>, recorded at Anhell Studios and mastered at Ultramarinos (Barcelona).',
       p5: 'In recent years they have released singles recorded at La Caverna Estudios: <em>Be My Baby</em> (2022), <em>Hay Allergy</em> (2022), <em>Mírate</em> (2024) and <em>Sepsiembre</em> (2025), the last two in Spanish.',
-      p6: 'In late 2025, Galician drummer Dani Pereira joined the band. Together they set out on a short tour across Spain celebrating their 15th anniversary. In October 2026 they head into the studio to record a new EP, due out in early 2027.',
+      p6: 'In late <em>2025</em>, Galician drummer Dani Pereira joined the band. Together they set out on a short tour across Spain celebrating their 15th anniversary. In October <em>2026</em> <u>they head into the studio to record a new EP</u>, due out in early <em>2027</em>.',
     },
     spotify: {
       title: 'Listen on Spotify',
@@ -122,7 +122,7 @@ export const translations = {
       p3: 'En 2013 llegó su primer LP, <em>Minor Fights and Major Fears</em>, editado por Wild Punk Records, con gira por España y actuación en el Festival Sick of Bean junto a Atlas Losing Grip, Burning Heads o No Children.',
       p4: 'Tras cambios de formación, en 2015 publicaron el single <em>Your Innate Ego</em> y en 2016 el EP <em>No Tales to Be Told</em>. En 2018 sacaron <em>Just a Call</em> y en 2020 el EP <em>Out of Range</em>, grabado en Anhell Studios y masterizado en Ultramarinos (Barcelona).',
       p5: 'En los últimos años han publicado singles grabados en La Caverna Estudios: <em>Be My Baby</em> (2022), <em>Hay Allergy</em> (2022), <em>Mírate</em> (2024) y <em>Sepsiembre</em> (2025), estos dos últimos en castellano.',
-      p6: 'A finales de 2025 se une a la banda el batería gallego Dani Pereira. Con él emprenden una pequeña gira por el país celebrando su 15.º aniversario. En octubre de 2026 entran en el estudio a grabar un nuevo EP, que verá la luz a principios de 2027.',
+      p6: 'A finales de <em>2025</em> se une a la banda el batería gallego Dani Pereira. Con él emprenden una pequeña gira por el país celebrando su 15.º aniversario. En octubre de <em>2026</em> <u>entran en el estudio a grabar un nuevo EP</u>, que verá la luz a principios de <em>2027</em>.',
     },
     spotify: {
       title: 'Escúchanos en Spotify',

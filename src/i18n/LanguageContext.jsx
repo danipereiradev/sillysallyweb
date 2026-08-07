@@ -87,23 +87,25 @@ export function useLanguage() {
   return ctx
 }
 
-/** Renders translation strings that may include simple <em> tags. */
+/** Renders translation strings that may include simple <em>/<u> tags. */
 export function T({ k, vars, as: Tag = 'span', className }) {
   const { t } = useLanguage()
   const html = t(k, vars)
   return (
     <Tag
       className={className}
-      dangerouslySetInnerHTML={{ __html: sanitizeEm(html) }}
+      dangerouslySetInnerHTML={{ __html: sanitizeInlineHtml(html) }}
     />
   )
 }
 
-function sanitizeEm(html) {
+function sanitizeInlineHtml(html) {
   return String(html)
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/&lt;em&gt;/g, '<em>')
     .replace(/&lt;\/em&gt;/g, '</em>')
+    .replace(/&lt;u&gt;/g, '<u>')
+    .replace(/&lt;\/u&gt;/g, '</u>')
 }
