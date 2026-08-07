@@ -1,13 +1,30 @@
+import { Route, Routes, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import Nav from './components/Nav'
-import Hero from './components/Hero'
-import SpotifySection from './components/SpotifySection'
-import BioSection from './components/BioSection'
-import InstagramSection from './components/InstagramSection'
-import MerchSection from './components/MerchSection'
-import ConcertList from './components/ConcertList'
-import BookingsCTA from './components/BookingsCTA'
+import HomePage from './pages/HomePage'
+import NewsArticlePage from './pages/NewsArticlePage'
 import { useLanguage } from './i18n/LanguageContext'
 import './App.css'
+
+function ScrollManager() {
+  const { pathname, hash } = useLocation()
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace('#', '')
+      const timer = window.setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        })
+      }, 0)
+      return () => window.clearTimeout(timer)
+    }
+    window.scrollTo(0, 0)
+  }, [pathname, hash])
+
+  return null
+}
 
 function App() {
   const { t } = useLanguage()
@@ -16,15 +33,18 @@ function App() {
     <div className="app">
       <div className="app__bg" aria-hidden="true" />
       <Nav />
-      <Hero />
-      <main className="app__boxed">
-        <BioSection />
-        <SpotifySection />
-        <ConcertList />
-        <MerchSection />
-        <BookingsCTA />
-        <InstagramSection />
-      </main>
+      <ScrollManager />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/noticias/:slug"
+          element={
+            <main className="app__news">
+              <NewsArticlePage />
+            </main>
+          }
+        />
+      </Routes>
       <footer className="footer">
         <p>
           © {new Date().getFullYear()} Silly Sally · {t('footer.tagline')}

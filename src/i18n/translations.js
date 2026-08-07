@@ -12,9 +12,14 @@ export const translations = {
       music: 'Music',
       tickets: 'Tickets',
       merch: 'Merch',
-      instagram: 'Instagram',
+      news: 'News',
       contact: 'Contact',
       language: 'Language',
+    },
+    news: {
+      title: 'News',
+      readMore: 'Read more',
+      back: 'Back to news',
     },
     hero: {
       title: 'Punk Rock from Madrid',
@@ -93,9 +98,14 @@ export const translations = {
       music: 'Música',
       tickets: 'Entradas',
       merch: 'Merch',
-      instagram: 'Instagram',
+      news: 'Noticias',
       contact: 'Contacto',
       language: 'Idioma',
+    },
+    news: {
+      title: 'Noticias',
+      readMore: 'Leer más',
+      back: 'Volver a noticias',
     },
     hero: {
       title: 'Punk Rock desde Madrid',

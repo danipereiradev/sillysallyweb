@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageContext'
 import LanguageSwitch from './LanguageSwitch'
 import './Nav.css'
@@ -80,11 +81,11 @@ export default function Nav() {
   const { t } = useLanguage()
 
   const links = [
-    { label: t('nav.bio'), href: '#bio' },
-    { label: t('nav.music'), href: '#spotify' },
-    { label: t('nav.tickets'), href: '#concerts' },
-    { label: t('nav.merch'), href: '#merch' },
-    { label: t('nav.instagram'), href: '#instagram' },
+    { label: t('nav.bio'), href: '/#bio' },
+    { label: t('nav.music'), href: '/#spotify' },
+    { label: t('nav.news'), href: '/#noticias' },
+    { label: t('nav.tickets'), href: '/#concerts' },
+    { label: t('nav.merch'), href: '/#merch' },
   ]
 
   useEffect(() => {
@@ -106,14 +107,14 @@ export default function Nav() {
       aria-label={t('nav.ariaLabel')}
     >
       <div className="nav__inner">
-        <a
-          href="#"
+        <Link
+          to="/"
           className="nav__logo-link"
           aria-label={t('nav.home')}
           onClick={closeMenu}
         >
           <img src={LOGO} alt="" className="nav__logo" />
-        </a>
+        </Link>
 
         <button
           type="button"
