@@ -44,6 +44,7 @@ export default function BioSection () {
           <T k="bio.p3" as="p" />
           <T k="bio.p4" as="p" />
           <T k="bio.p5" as="p" />
+          <T k="bio.p6" as="p" />
         </div>
       </div>
     </section>
