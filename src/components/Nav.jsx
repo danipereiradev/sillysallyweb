@@ -104,8 +104,6 @@ export default function Nav() {
     if (!nav) return undefined
 
     const syncNavHeight = () => {
-      // Ignore expanded mobile menu so hero height stays stable.
-      if (nav.classList.contains('nav--open')) return
       document.documentElement.style.setProperty(
         '--nav-height',
         `${nav.offsetHeight}px`,
@@ -116,7 +114,7 @@ export default function Nav() {
     const observer = new ResizeObserver(syncNavHeight)
     observer.observe(nav)
     return () => observer.disconnect()
-  }, [isOpen])
+  }, [])
 
   const closeMenu = () => setIsOpen(false)
 
