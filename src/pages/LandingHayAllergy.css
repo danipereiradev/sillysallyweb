@@ -16,7 +16,10 @@
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  background: #000;
+  background-color: #111;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .lp__video iframe {
@@ -39,11 +42,11 @@
   background:
     linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.72) 0%,
-      rgba(0, 0, 0, 0.45) 42%,
-      rgba(0, 0, 0, 0.78) 100%
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.28) 42%,
+      rgba(0, 0, 0, 0.72) 100%
     ),
-    radial-gradient(ellipse at 50% 35%, transparent 0%, rgba(0, 0, 0, 0.55) 100%);
+    radial-gradient(ellipse at 50% 35%, transparent 10%, rgba(0, 0, 0, 0.4) 100%);
 }
 
 .lp__top {

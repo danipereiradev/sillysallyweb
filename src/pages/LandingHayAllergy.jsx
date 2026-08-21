@@ -14,7 +14,8 @@ const TRACK_NAME = 'Hay Allergy'
 const SPOTIFY_URL = `https://open.spotify.com/track/${TRACK_ID}?si=9d2ea08126ef4c92`
 const SPOTIFY_EMBED = `https://open.spotify.com/embed/track/${TRACK_ID}?utm_source=generator&theme=0`
 const YT_VIDEO_ID = 'nkngZTnxqAU'
-const YT_EMBED = `https://www.youtube.com/embed/${YT_VIDEO_ID}?autoplay=1&mute=1&controls=0&loop=1&playlist=${YT_VIDEO_ID}&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0`
+const YT_POSTER = `https://i.ytimg.com/vi/${YT_VIDEO_ID}/maxresdefault.jpg`
+const YT_EMBED = `https://www.youtube-nocookie.com/embed/${YT_VIDEO_ID}?autoplay=1&mute=1&controls=0&loop=1&playlist=${YT_VIDEO_ID}&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&enablejsapi=1`
 const LANDING_PATH = '/hay-allergy'
 const LOGO = '/Silly Sally Logo solo.png'
 const INSTAGRAM_URL = 'https://www.instagram.com/sillysallyband/'
@@ -53,11 +54,16 @@ export default function LandingHayAllergy() {
 
   return (
     <div className="lp">
-      <div className="lp__video" aria-hidden="true">
+      <div
+        className="lp__video"
+        aria-hidden="true"
+        style={{ backgroundImage: `url(${YT_POSTER})` }}
+      >
         <iframe
           src={YT_EMBED}
           title=""
-          allow="autoplay; encrypted-media; picture-in-picture"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          referrerPolicy="strict-origin-when-cross-origin"
           tabIndex={-1}
         />
       </div>
