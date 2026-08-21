@@ -83,6 +83,18 @@ export const translations = {
     footer: {
       tagline: 'Punk Rock Madrid',
     },
+    landingHayAllergy: {
+      docTitle: 'Hay Allergy · Silly Sally',
+      eyebrow: 'Silly Sally',
+      title: 'Hay Allergy',
+      lead: 'Melodic punk rock from Madrid. Hit play and turn it up.',
+      cta: 'Listen on Spotify',
+      ctaHint: 'Opens the track in Spotify',
+      moreLabel: 'More',
+      embedTitle: 'Hay Allergy on Spotify',
+      instagram: 'Follow on Instagram',
+      website: 'Full website',
+    },
   },
   es: {
     nav: {
@@ -165,6 +177,18 @@ export const translations = {
     },
     footer: {
       tagline: 'Punk Rock Madrid',
+    },
+    landingHayAllergy: {
+      docTitle: 'Hay Allergy · Silly Sally',
+      eyebrow: 'Silly Sally',
+      title: 'Hay Allergy',
+      lead: 'Punk rock melódico desde Madrid. Dale al play y súbele el volumen.',
+      cta: 'Escuchar en Spotify',
+      ctaHint: 'Abre la canción en Spotify',
+      moreLabel: 'Más',
+      embedTitle: 'Hay Allergy en Spotify',
+      instagram: 'Seguir en Instagram',
+      website: 'Web completa',
     },
   },
 }

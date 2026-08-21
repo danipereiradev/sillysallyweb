@@ -5,6 +5,10 @@
   flex-direction: column;
 }
 
+.app--landing {
+  min-height: 100dvh;
+}
+
 .app__bg {
   position: fixed;
   inset: 0;
