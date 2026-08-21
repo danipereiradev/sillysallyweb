@@ -10,14 +10,25 @@
 
 .hero__background {
   position: absolute;
-  inset: -4%;
+  inset: 0;
   background-color: #000000;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  transform-origin: center center;
-  animation: hero-kenburns 22s ease-in-out infinite alternate;
-  will-change: transform;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw;
+  min-width: 177.78vh;
+  min-height: 100%;
+  border: 0;
+  transform: translate(-50%, -50%) scale(1.12);
 }
 
 .hero__overlay {
@@ -27,10 +38,10 @@
     linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.5) 0%,
-      rgba(0, 0, 0, 0.35) 45%,
+      rgba(0, 0, 0, 0.32) 45%,
       rgba(0, 0, 0, 0.7) 100%
     ),
-    radial-gradient(ellipse at center, transparent 20%, rgba(0, 0, 0, 0.55) 100%);
+    radial-gradient(ellipse at center, transparent 20%, rgba(0, 0, 0, 0.5) 100%);
   pointer-events: none;
 }
 
@@ -87,11 +98,6 @@
     place-items: center;
   }
 
-  .hero__background {
-    background-position: center 30%;
-    inset: -6%;
-  }
-
   .hero__overlay {
     background:
       linear-gradient(
@@ -131,20 +137,8 @@
   }
 }
 
-@keyframes hero-kenburns {
-  from {
-    transform: scale(1.06) translate3d(1.2%, 0.6%, 0);
-  }
-
-  to {
-    transform: scale(1.2) translate3d(-3.2%, -2%, 0);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .hero__background {
-    inset: 0;
-    animation: none;
-    transform: none;
+  .hero__video {
+    display: none;
   }
 }
