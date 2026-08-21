@@ -12,7 +12,6 @@ import './LandingHayAllergy.css'
 const TRACK_ID = '42PLZ719p2jlaw4B6BPrUw'
 const TRACK_NAME = 'Hay Allergy'
 const SPOTIFY_URL = `https://open.spotify.com/track/${TRACK_ID}?si=9d2ea08126ef4c92`
-const SPOTIFY_EMBED = `https://open.spotify.com/embed/track/${TRACK_ID}?utm_source=generator&theme=0`
 const YT_VIDEO_ID = 'nkngZTnxqAU'
 const YT_POSTER = `https://i.ytimg.com/vi/${YT_VIDEO_ID}/maxresdefault.jpg`
 const YT_EMBED = `https://www.youtube-nocookie.com/embed/${YT_VIDEO_ID}?autoplay=1&mute=1&controls=0&loop=1&playlist=${YT_VIDEO_ID}&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&enablejsapi=1`
@@ -103,17 +102,6 @@ export default function LandingHayAllergy() {
 
       <section className="lp__below" aria-label={t('landingHayAllergy.moreLabel')}>
         <div className="lp__below-inner">
-          <div className="lp__embed">
-            <iframe
-              title={t('landingHayAllergy.embedTitle')}
-              src={SPOTIFY_EMBED}
-              width="100%"
-              height="152"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-            />
-          </div>
-
           <div className="lp__links">
             <a
               href={INSTAGRAM_URL}
