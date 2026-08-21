@@ -80,7 +80,6 @@ export default function LandingHayAllergy() {
           width={360}
           height={120}
         />
-        <p className="lp__eyebrow">{t('landingHayAllergy.eyebrow')}</p>
         <h1 className="lp__title">{t('landingHayAllergy.title')}</h1>
         <p className="lp__lead">{t('landingHayAllergy.lead')}</p>
 

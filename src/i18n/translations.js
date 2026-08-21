@@ -85,7 +85,6 @@ export const translations = {
     },
     landingHayAllergy: {
       docTitle: 'Hay Allergy · Silly Sally',
-      eyebrow: 'Silly Sally',
       title: 'Hay Allergy',
       lead: 'Melodic punk rock from Madrid. Hit play and turn it up.',
       cta: 'Listen on Spotify',
@@ -179,7 +178,6 @@ export const translations = {
     },
     landingHayAllergy: {
       docTitle: 'Hay Allergy · Silly Sally',
-      eyebrow: 'Silly Sally',
       title: 'Hay Allergy',
       lead: 'Punk rock melódico desde Madrid. Dale al play y súbele el volumen.',
       cta: 'Escuchar en Spotify',
