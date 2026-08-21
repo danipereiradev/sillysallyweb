@@ -1,8 +1,6 @@
 const META_PIXEL_ID = import.meta.env.VITE_META_PIXEL_ID?.trim() || ''
-const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID?.trim() || ''
 
 let metaReady = false
-let gaReady = false
 
 function ensureDataLayer() {
   window.dataLayer = window.dataLayer || []
@@ -11,7 +9,6 @@ function ensureDataLayer() {
 export function initAnalytics() {
   ensureDataLayer()
   initMetaPixel()
-  initGa()
 }
 
 function initMetaPixel() {
@@ -44,23 +41,10 @@ function initMetaPixel() {
   metaReady = true
 }
 
-function initGa() {
-  if (!GA_MEASUREMENT_ID || gaReady || typeof window === 'undefined') return
-
-  const script = document.createElement('script')
-  script.async = true
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
-  document.head.appendChild(script)
-
-  window.dataLayer = window.dataLayer || []
-  window.gtag = function gtag() {
-    window.dataLayer.push(arguments)
-  }
-  window.gtag('js', new Date())
-  window.gtag('config', GA_MEASUREMENT_ID, { send_page_view: false })
-  gaReady = true
-}
-
+/**
+ * SPA / landing pageview for GTM → GA4.
+ * GTM trigger: Custom Event = "page_view"
+ */
 export function trackPageView(path, title) {
   ensureDataLayer()
   window.dataLayer.push({
@@ -72,18 +56,12 @@ export function trackPageView(path, title) {
   if (META_PIXEL_ID && window.fbq) {
     window.fbq('track', 'PageView')
   }
-
-  if (GA_MEASUREMENT_ID && window.gtag) {
-    window.gtag('event', 'page_view', {
-      page_path: path,
-      page_title: title,
-    })
-  }
 }
 
 /**
- * Primary conversion for the Instagram → Spotify landing.
- * Fires Meta custom + Lead events, GA4, dataLayer, and a server beacon.
+ * Primary conversion: Instagram ad → Spotify listen CTA.
+ * GTM trigger: Custom Event = "spotify_listen_click"
+ * Recommended GA4 event name in the GTM tag: spotify_listen_click
  */
 export function trackSpotifyListenClick({
   trackId,
@@ -109,18 +87,9 @@ export function trackSpotifyListenClick({
       content_ids: trackId ? [trackId] : undefined,
       content_type: 'song',
     })
-    // Easy to map as a conversion in Meta Ads Manager
     window.fbq('track', 'Lead', {
       content_name: trackName,
       content_category: 'spotify_listen',
-    })
-  }
-
-  if (GA_MEASUREMENT_ID && window.gtag) {
-    window.gtag('event', 'spotify_listen_click', {
-      track_id: trackId,
-      track_name: trackName,
-      landing_path: landingPath,
     })
   }
 
