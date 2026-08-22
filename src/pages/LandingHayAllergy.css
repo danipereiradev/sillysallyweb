@@ -108,8 +108,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.85rem;
   margin-top: 0.85rem;
+}
+
+.lp__cta-nudge {
+  margin: 0;
+  max-width: 22rem;
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 2.6vw, 1.05rem);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  color: var(--color-white);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
 }
 
 .lp__cta {
@@ -156,13 +168,6 @@
 .lp__cta:focus-visible {
   outline: 2px solid var(--color-white);
   outline-offset: 4px;
-}
-
-.lp__cta-hint {
-  margin: 0;
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  color: var(--color-gray-400);
 }
 
 .lp__below {

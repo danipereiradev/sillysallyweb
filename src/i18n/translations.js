@@ -87,8 +87,9 @@ export const translations = {
       docTitle: 'Hay Allergy · Silly Sally',
       title: 'Hay Allergy',
       lead: 'Melodic punk rock from Madrid. Hit play and turn it up.',
+      ctaNudge:
+        'Help us grow on Spotify — listen for at least 30 seconds.',
       cta: 'Listen on Spotify',
-      ctaHint: 'Opens the track in Spotify',
       moreLabel: 'More',
       instagram: 'Follow on Instagram',
       website: 'Full website',
@@ -180,8 +181,9 @@ export const translations = {
       docTitle: 'Hay Allergy · Silly Sally',
       title: 'Hay Allergy',
       lead: 'Punk rock melódico desde Madrid. Dale al play y súbele el volumen.',
+      ctaNudge:
+        'Ayúdanos a crecer en Spotify: escucha al menos 30 segundos.',
       cta: 'Escuchar en Spotify',
-      ctaHint: 'Abre la canción en Spotify',
       moreLabel: 'Más',
       instagram: 'Seguir en Instagram',
       website: 'Web completa',

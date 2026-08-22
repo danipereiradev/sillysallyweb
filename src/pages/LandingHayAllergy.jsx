@@ -84,6 +84,7 @@ export default function LandingHayAllergy() {
         <p className="lp__lead">{t('landingHayAllergy.lead')}</p>
 
         <div className="lp__cta-group">
+          <p className="lp__cta-nudge">{t('landingHayAllergy.ctaNudge')}</p>
           <a
             href={SPOTIFY_URL}
             className="lp__cta"
@@ -95,7 +96,6 @@ export default function LandingHayAllergy() {
             <SpotifyIcon />
             <span>{t('landingHayAllergy.cta')}</span>
           </a>
-          <p className="lp__cta-hint">{t('landingHayAllergy.ctaHint')}</p>
         </div>
       </main>
 
