@@ -84,6 +84,7 @@ export default function Nav() {
   const links = [
     { label: t('nav.bio'), href: '/#bio' },
     { label: t('nav.music'), href: '/#spotify' },
+    { label: t('nav.tickets'), href: '/#concerts' },
     { label: t('nav.news'), href: '/#noticias' },
     { label: t('nav.merch'), href: '/#merch' },
   ]
