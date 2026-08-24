@@ -4,6 +4,7 @@ import Nav from './components/Nav'
 import HomePage from './pages/HomePage'
 import NewsArticlePage from './pages/NewsArticlePage'
 import LandingHayAllergy from './pages/LandingHayAllergy'
+import TicketLandingPage from './pages/TicketLandingPage'
 import { useLanguage } from './i18n/LanguageContext'
 import './App.css'
 
@@ -30,7 +31,8 @@ function ScrollManager() {
 function App() {
   const { t } = useLanguage()
   const { pathname } = useLocation()
-  const isAdLanding = pathname.startsWith('/hay-allergy')
+  const isAdLanding =
+    pathname.startsWith('/hay-allergy') || pathname.startsWith('/entradas')
 
   return (
     <div className={`app${isAdLanding ? ' app--landing' : ''}`}>
@@ -40,6 +42,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/hay-allergy" element={<LandingHayAllergy />} />
+        <Route path="/entradas/:slug" element={<TicketLandingPage />} />
         <Route
           path="/noticias/:slug"
           element={

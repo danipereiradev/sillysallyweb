@@ -96,6 +96,44 @@ export function trackSpotifyListenClick({
   sendTrackBeacon(payload)
 }
 
+/**
+ * Conversion: ad landing → ticket purchase CTA.
+ * GTM trigger: Custom Event = "ticket_click"
+ */
+export function trackTicketClick({
+  landingPath,
+  city,
+  venue,
+  ticketUrl,
+  slug,
+} = {}) {
+  const payload = {
+    event: 'ticket_click',
+    landing_path: landingPath,
+    city,
+    venue,
+    ticket_url: ticketUrl,
+    slug,
+    ts: Date.now(),
+  }
+
+  ensureDataLayer()
+  window.dataLayer.push(payload)
+
+  if (META_PIXEL_ID && window.fbq) {
+    window.fbq('trackCustom', 'TicketClick', {
+      content_name: city,
+      content_category: 'ticket',
+    })
+    window.fbq('track', 'Lead', {
+      content_name: city,
+      content_category: 'ticket',
+    })
+  }
+
+  sendTrackBeacon(payload)
+}
+
 function sendTrackBeacon(payload) {
   try {
     const body = JSON.stringify(payload)

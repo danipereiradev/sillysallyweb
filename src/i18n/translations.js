@@ -94,6 +94,15 @@ export const translations = {
       instagram: 'Follow on Instagram',
       website: 'Full website',
     },
+    ticketLanding: {
+      docTitle: '{bands} in {city} · Tickets',
+      lead: 'Live punk rock night. Get your tickets before they sell out.',
+      cta: 'Buy tickets',
+      videosLabel: 'Band videos',
+      videoSoon: 'Video coming soon',
+      instagram: 'Follow on Instagram',
+      website: 'Full website',
+    },
   },
   es: {
     nav: {
@@ -185,6 +194,15 @@ export const translations = {
         'Ayúdanos a crecer en Spotify: escucha al menos 30 segundos.',
       cta: 'Escuchar en Spotify',
       moreLabel: 'Más',
+      instagram: 'Seguir en Instagram',
+      website: 'Web completa',
+    },
+    ticketLanding: {
+      docTitle: '{bands} en {city} · Entradas',
+      lead: 'Noche de punk rock en directo. Consigue tu entrada antes de que se agoten.',
+      cta: 'Comprar entradas',
+      videosLabel: 'Vídeos de las bandas',
+      videoSoon: 'Vídeo próximamente',
       instagram: 'Seguir en Instagram',
       website: 'Web completa',
     },
