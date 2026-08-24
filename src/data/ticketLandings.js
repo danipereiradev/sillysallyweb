@@ -15,15 +15,15 @@ export const ticketLandings = {
     time: '21:30',
     ticketUrl:
       'https://woutick.com/es/entradas/silly-sally-kontrol-mental-en-el-stereo-de-logrono',
-    heroVideoId: 'nkngZTnxqAU',
+    heroVideoId: 'r2Lg1nlqh1Q',
     bands: [
       {
         name: 'Silly Sally',
-        youtubeId: 'nkngZTnxqAU',
+        youtubeId: 'r2Lg1nlqh1Q',
       },
       {
         name: 'Kontrol Mental',
-        youtubeId: null,
+        youtubeId: 'mjyP-RZqX4A',
       },
     ],
   },
