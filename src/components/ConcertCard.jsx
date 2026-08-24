@@ -1,4 +1,5 @@
 import { useLanguage } from '../i18n/LanguageContext'
+import { trackTicketClick } from '../lib/analytics'
 import './ConcertCard.css'
 
 function formatSupport(support, t) {
@@ -28,6 +29,16 @@ export default function ConcertCard({ concert }) {
     : concert.url === '#'
       ? t('concerts.comingSoon')
       : t('concerts.tickets')
+
+  function handleTicketClick() {
+    trackTicketClick({
+      landingPath: '/#concerts',
+      city: concert.city,
+      venue: venue || concert.venue || '',
+      ticketUrl: concert.url,
+      slug: `${concert.city}-${concert.day}-${concert.month}`.toLowerCase(),
+    })
+  }
 
   return (
     <article
@@ -72,6 +83,8 @@ export default function ConcertCard({ concert }) {
             className="concert-card__btn"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleTicketClick}
+            data-track="ticket_click"
           >
             {buttonLabel}
           </a>
