@@ -24,6 +24,8 @@ export const translations = {
     hero: {
       title: 'Punk Rock from Madrid',
       description: 'Listen to our music, follow the news and grab some merch.',
+      enableSound: 'Sound on',
+      muteSound: 'Mute',
     },
     bio: {
       title: 'Bio',
@@ -127,6 +129,8 @@ export const translations = {
       title: 'Punk Rock desde Madrid',
       description:
         'Escucha nuestra música, sigue las noticias y cómprate algo de merch.',
+      enableSound: 'Activar sonido',
+      muteSound: 'Silenciar',
     },
     bio: {
       title: 'Bio',
