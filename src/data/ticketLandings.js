@@ -39,6 +39,7 @@ export const ticketLandings = {
     time: '21:00',
     ticketUrl:
       'https://entradium.com/events/silly-sally-my-left-foot-punk-rock-party',
+    heroVideoId: 'nkngZTnxqAU',
     posterImage: '/img/carteles/silly-sally-my-left-foot-madrid-2026.jpg',
     bands: [
       {

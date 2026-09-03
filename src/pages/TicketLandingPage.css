@@ -160,6 +160,22 @@
   outline-offset: 4px;
 }
 
+.tlp__poster {
+  position: relative;
+  z-index: 2;
+  padding: 0 clamp(1rem, 4vw, 1.75rem) clamp(1.25rem, 3.5vw, 2rem);
+  animation: tlp-rise 1s ease-out 0.08s both;
+}
+
+.tlp__poster-img {
+  display: block;
+  width: min(28rem, 100%);
+  margin: 0 auto;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+}
+
 .tlp__videos {
   position: relative;
   z-index: 2;

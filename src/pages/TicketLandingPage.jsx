@@ -78,12 +78,9 @@ export default function TicketLandingPage() {
 
   const landingPath = `/entradas/${show.slug}`
   const bandLine = show.bands.map((b) => b.name).join(' + ')
-  const usePoster = Boolean(show.posterImage)
-  const bgImage = usePoster
-    ? show.posterImage
-    : show.heroVideoId
-      ? youtubePoster(show.heroVideoId)
-      : undefined
+  const bgImage = show.heroVideoId
+    ? youtubePoster(show.heroVideoId)
+    : undefined
 
   function handleTicketClick() {
     trackTicketClick({
@@ -102,7 +99,7 @@ export default function TicketLandingPage() {
         aria-hidden="true"
         style={bgImage ? { backgroundImage: `url(${bgImage})` } : undefined}
       >
-        {!usePoster && show.heroVideoId ? (
+        {show.heroVideoId ? (
           <iframe
             src={youtubeBackgroundEmbed(show.heroVideoId)}
             title=""
@@ -144,6 +141,23 @@ export default function TicketLandingPage() {
           {t('ticketLanding.cta')}
         </a>
       </main>
+
+      {show.posterImage ? (
+        <section
+          className="tlp__poster"
+          aria-label={t('ticketLanding.posterLabel')}
+        >
+          <img
+            src={show.posterImage}
+            alt={t('ticketLanding.posterAlt', {
+              city: show.city,
+              bands: bandLine,
+            })}
+            className="tlp__poster-img"
+            loading="lazy"
+          />
+        </section>
+      ) : null}
 
       <section
         className="tlp__videos"
