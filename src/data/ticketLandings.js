@@ -3,6 +3,8 @@
  *
  * To add another show, copy an entry and fill the fields.
  * youtubeId: YouTube video id only (e.g. "nkngZTnxqAU"), or null for empty slot.
+ * posterImage: optional full-bleed poster; used as hero background when set.
+ * heroVideoId: optional looping YouTube background (ignored if posterImage is set).
  */
 export const ticketLandings = {
   logrono: {
@@ -24,6 +26,28 @@ export const ticketLandings = {
       {
         name: 'Kontrol Mental',
         youtubeId: 'mjyP-RZqX4A',
+      },
+    ],
+  },
+  madrid: {
+    slug: 'madrid',
+    city: 'Madrid',
+    venue: 'Sala B',
+    day: '19',
+    month: 'SEP',
+    year: '2026',
+    time: '21:00',
+    ticketUrl:
+      'https://entradium.com/events/silly-sally-my-left-foot-punk-rock-party',
+    posterImage: '/img/carteles/silly-sally-my-left-foot-madrid-2026.jpg',
+    bands: [
+      {
+        name: 'Silly Sally',
+        youtubeId: 'r2Lg1nlqh1Q',
+      },
+      {
+        name: 'My Left Foot',
+        youtubeId: null,
       },
     ],
   },
