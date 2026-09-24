@@ -20,7 +20,7 @@ export const newsArticles = [
         '05/09 — Logroño, con Kontrol Mental.',
         '19/09 — Madrid, con My Left Foot.',
         '17/10 — Gijón, con Noite Atari.',
-        '06/11 — Jerez, con Mexican Sugar Skulls y Liv Wallace.',
+        '20/02/2027 — Jerez, con Mexican Sugar Skulls y Liv Wallace (aplazado).',
         '¡Nos vemos en la carretera!',
       ],
       en: [
@@ -31,7 +31,7 @@ export const newsArticles = [
         '05/09 — Logroño, with Kontrol Mental.',
         '19/09 — Madrid, with My Left Foot.',
         '17/10 — Gijón, with Noite Atari.',
-        '06/11 — Jerez, with Mexican Sugar Skulls and Liv Wallace.',
+        '20/02/2027 — Jerez, with Mexican Sugar Skulls and Liv Wallace (postponed).',
         'See you on the road!',
       ],
     },

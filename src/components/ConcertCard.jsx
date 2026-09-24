@@ -53,6 +53,9 @@ export default function ConcertCard({ concert }) {
       <div className="concert-card__date">
         <span className="concert-card__day">{concert.day}</span>
         <span className="concert-card__month">{concert.month}</span>
+        {concert.year ? (
+          <span className="concert-card__year">{concert.year}</span>
+        ) : null}
       </div>
 
       <div className="concert-card__body">

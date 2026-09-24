@@ -37,7 +37,7 @@ export const concerts = [
     time: '21:30',
     support: ['Kontrol Mental'],
     url: 'https://woutick.com/es/entradas/silly-sally-kontrol-mental-en-el-stereo-de-logrono',
-    status: 'upcoming',
+    status: 'past',
   },
   {
     day: '19',
@@ -47,7 +47,7 @@ export const concerts = [
     time: '21:00',
     support: ['My Left Foot'],
     url: 'https://entradium.com/events/silly-sally-my-left-foot-punk-rock-party',
-    status: 'upcoming',
+    status: 'past',
   },
   {
     day: '17',
@@ -60,8 +60,9 @@ export const concerts = [
     status: 'upcoming',
   },
   {
-    day: '06',
-    month: 'NOV',
+    day: '20',
+    month: 'FEB',
+    year: '2027',
     city: 'JEREZ',
     venue: 'Bodega Skate Park',
     timeKey: 'timeTbd',
